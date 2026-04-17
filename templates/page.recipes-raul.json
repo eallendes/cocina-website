@@ -1,0 +1,47 @@
+{
+  "sections": {
+    "cocina_recipes": {
+      "type": "cocina-recipes-raul",
+      "blocks": {
+        "res": {
+          "type": "recipe_category",
+          "settings": {
+            "label": "Recetas con",
+            "name": "Res"
+          }
+        },
+        "salmon": {
+          "type": "recipe_category",
+          "settings": {
+            "label": "Recetas con",
+            "name": "Salmón"
+          }
+        },
+        "pollo": {
+          "type": "recipe_category",
+          "settings": {
+            "label": "Recetas con",
+            "name": "Pollo"
+          }
+        },
+        "horneaditas": {
+          "type": "recipe_category",
+          "settings": {
+            "label": "Delicias",
+            "name": "Horneaditas"
+          }
+        }
+      },
+      "block_order": ["res", "salmon", "pollo", "horneaditas"],
+      "settings": {
+        "eyebrow": "Chef Raúl Correa presenta",
+        "hero_title": "Recetas con Raúl",
+        "hero_sub": "para tu mejor amigo peludo",
+        "section_title": "deliciosas recetas caseras",
+        "section_sub": "para tu mejor amigo peludo",
+        "cta_text": "Adquiere el libro completo ▶"
+      }
+    }
+  },
+  "order": ["cocina_recipes"]
+}

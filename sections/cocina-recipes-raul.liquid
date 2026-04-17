@@ -1,0 +1,408 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+{% style %}
+  .cocina-recipes {
+    background-color: #f5ede0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120' width='120' height='120'%3E%3Cg fill='%234a7c3f' opacity='0.13'%3E%3Cellipse cx='60' cy='76' rx='18' ry='14'/%3E%3Cellipse cx='35' cy='51' rx='9' ry='8' transform='rotate(-20 35 51)'/%3E%3Cellipse cx='50' cy='40' rx='9' ry='8'/%3E%3Cellipse cx='70' cy='40' rx='9' ry='8'/%3E%3Cellipse cx='85' cy='51' rx='9' ry='8' transform='rotate(20 85 51)'/%3E%3C/g%3E%3C/svg%3E");
+    font-family: 'Montserrat', sans-serif;
+    padding: 0 0 80px;
+  }
+
+  /* ── Hero Banner ── */
+  .cocina-recipes__hero {
+    background-color: #4a7c3f;
+    padding: 48px 20px;
+    text-align: center;
+    margin-bottom: 56px;
+  }
+
+  .cocina-recipes__hero-eyebrow {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    color: rgba(255,255,255,0.85);
+    font-size: 1.15rem;
+    margin: 0 0 8px;
+  }
+
+  .cocina-recipes__hero-title {
+    font-family: 'Bebas Neue', cursive;
+    font-size: clamp(2.4rem, 5vw, 3.8rem);
+    color: #fff;
+    margin: 0 0 10px;
+    letter-spacing: 2px;
+    line-height: 1.1;
+  }
+
+  .cocina-recipes__hero-title em {
+    color: #e8640a;
+    font-style: normal;
+  }
+
+  .cocina-recipes__hero-sub {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    color: rgba(255,255,255,0.8);
+    font-size: 1.05rem;
+    margin: 0;
+  }
+
+  .cocina-recipes__inner {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  /* ── Section heading ── */
+  .cocina-recipes__heading-wrap {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .cocina-recipes__heading-wrap h2 {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+    color: #4a7c3f;
+    margin: 0 0 6px;
+  }
+
+  .cocina-recipes__heading-wrap p {
+    font-size: 0.95rem;
+    color: #e8640a;
+    margin: 0;
+    font-weight: 600;
+  }
+
+  /* ── Category Grid ── */
+  .cocina-recipes__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    margin-bottom: 56px;
+  }
+
+  @media (max-width: 960px) {
+    .cocina-recipes__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 520px) {
+    .cocina-recipes__grid {
+      grid-template-columns: 1fr;
+      max-width: 340px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  .cocina-recipe-card {
+    background: rgba(255, 255, 255, 0.82);
+    border-radius: 18px;
+    border: 1px solid rgba(74, 124, 63, 0.1);
+    box-shadow: 0 4px 20px rgba(74, 124, 63, 0.08);
+    overflow: hidden;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .cocina-recipe-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 32px rgba(74, 124, 63, 0.16);
+  }
+
+  .cocina-recipe-card__img-wrap {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    background: #e8ddd0;
+  }
+
+  .cocina-recipe-card__img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.35s ease;
+  }
+
+  .cocina-recipe-card:hover .cocina-recipe-card__img-wrap img {
+    transform: scale(1.05);
+  }
+
+  .cocina-recipe-card__body {
+    padding: 16px 18px 20px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 8px;
+  }
+
+  .cocina-recipe-card__label {
+    font-size: 0.78rem;
+    color: #666;
+    font-style: italic;
+    margin: 0 0 2px;
+    line-height: 1.2;
+  }
+
+  .cocina-recipe-card__name {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: #333;
+    margin: 0;
+    line-height: 1.2;
+  }
+
+  .cocina-recipe-card__arrow {
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .cocina-recipe-card__arrow svg {
+    width: 22px;
+    height: 22px;
+    fill: #4a7c3f;
+  }
+
+  /* ── Book CTA ── */
+  .cocina-recipes__cta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 28px;
+    flex-wrap: wrap;
+  }
+
+  .cocina-recipes__book-img {
+    width: 110px;
+    height: auto;
+    display: block;
+    filter: drop-shadow(0 6px 14px rgba(0,0,0,0.18));
+  }
+
+  .cocina-btn-orange {
+    display: inline-block;
+    background-color: #e8640a;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 15px 38px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: background-color 0.25s ease;
+    box-shadow: 0 4px 14px rgba(232, 100, 10, 0.35);
+  }
+
+  .cocina-btn-orange:hover {
+    background-color: #c95500;
+  }
+{% endstyle %}
+
+<div class="cocina-recipes">
+
+  {%- comment -%} ── Hero ── {%- endcomment -%}
+  <div class="cocina-recipes__hero">
+    {%- if section.settings.eyebrow != blank -%}
+      <p class="cocina-recipes__hero-eyebrow">{{ section.settings.eyebrow }}</p>
+    {%- endif -%}
+    <h1 class="cocina-recipes__hero-title">{{ section.settings.hero_title }}</h1>
+    {%- if section.settings.hero_sub != blank -%}
+      <p class="cocina-recipes__hero-sub">{{ section.settings.hero_sub }}</p>
+    {%- endif -%}
+  </div>
+
+  <div class="cocina-recipes__inner">
+
+    {%- comment -%} ── Section Heading ── {%- endcomment -%}
+    <div class="cocina-recipes__heading-wrap">
+      <h2>{{ section.settings.section_title }}</h2>
+      {%- if section.settings.section_sub != blank -%}
+        <p>{{ section.settings.section_sub }}</p>
+      {%- endif -%}
+    </div>
+
+    {%- comment -%} ── Recipe Category Cards ── {%- endcomment -%}
+    <div class="cocina-recipes__grid">
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'recipe_category' -%}
+          <a
+            href="{{ block.settings.link | default: '#' }}"
+            class="cocina-recipe-card"
+            {{ block.shopify_attributes }}
+          >
+            <div class="cocina-recipe-card__img-wrap">
+              {%- if block.settings.image != blank -%}
+                {{- block.settings.image | image_url: width: 600 | image_tag: loading: 'lazy', alt: block.settings.name -}}
+              {%- else -%}
+                {{ 'image' | placeholder_svg_tag }}
+              {%- endif -%}
+            </div>
+            <div class="cocina-recipe-card__body">
+              <div>
+                <p class="cocina-recipe-card__label">{{ block.settings.label }}</p>
+                <p class="cocina-recipe-card__name">{{ block.settings.name }}</p>
+              </div>
+              <span class="cocina-recipe-card__arrow">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8 5v14l11-7z"/></svg>
+              </span>
+            </div>
+          </a>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+
+    {%- comment -%} ── Book CTA ── {%- endcomment -%}
+    <div class="cocina-recipes__cta">
+      {%- if section.settings.book_image != blank -%}
+        {{- section.settings.book_image | image_url: width: 300 | image_tag: loading: 'lazy', class: 'cocina-recipes__book-img', alt: 'En la Cocina de Raúl con Bear' -}}
+      {%- endif -%}
+      <a href="{{ section.settings.cta_link }}" class="cocina-btn-orange">
+        {{ section.settings.cta_text }}
+      </a>
+    </div>
+
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Recetas con Raúl",
+  "tag": "section",
+  "blocks": [
+    {
+      "type": "recipe_category",
+      "name": "Categoría de receta",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Foto de la receta"
+        },
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Etiqueta superior",
+          "default": "Recetas con"
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Nombre de categoría",
+          "default": "Res"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Enlace"
+        }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "header",
+      "content": "Banner hero"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Texto superior (itálica)",
+      "default": "Chef Raúl Correa presenta"
+    },
+    {
+      "type": "text",
+      "id": "hero_title",
+      "label": "Título principal",
+      "default": "Recetas con Raúl"
+    },
+    {
+      "type": "text",
+      "id": "hero_sub",
+      "label": "Subtítulo",
+      "default": "para tu mejor amigo peludo"
+    },
+    {
+      "type": "header",
+      "content": "Sección de categorías"
+    },
+    {
+      "type": "text",
+      "id": "section_title",
+      "label": "Título de sección",
+      "default": "deliciosas recetas caseras"
+    },
+    {
+      "type": "text",
+      "id": "section_sub",
+      "label": "Subtítulo",
+      "default": "para tu mejor amigo peludo"
+    },
+    {
+      "type": "header",
+      "content": "CTA del libro"
+    },
+    {
+      "type": "image_picker",
+      "id": "book_image",
+      "label": "Foto del libro"
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "Texto del botón",
+      "default": "Adquiere el libro completo ▶"
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "Enlace del botón"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Recetas con Raúl",
+      "blocks": [
+        {
+          "type": "recipe_category",
+          "settings": {
+            "label": "Recetas con",
+            "name": "Res"
+          }
+        },
+        {
+          "type": "recipe_category",
+          "settings": {
+            "label": "Recetas con",
+            "name": "Salmón"
+          }
+        },
+        {
+          "type": "recipe_category",
+          "settings": {
+            "label": "Recetas con",
+            "name": "Pollo"
+          }
+        },
+        {
+          "type": "recipe_category",
+          "settings": {
+            "label": "Delicias",
+            "name": "Horneaditas"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

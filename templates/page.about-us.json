@@ -1,0 +1,26 @@
+{
+  "sections": {
+    "cocina_about": {
+      "type": "cocina-about-us",
+      "settings": {
+        "heading": "Sobre Nosotros",
+        "intro_text": "Conoce al equipo detrás de Cocina con Raúl y Bear — Somos el Chef Raúl, la escritora Evelyn Allendes y el Veterinario Dr. Ortiz",
+        "member_1_name": "Raúl Correa",
+        "member_1_title": "Chef profesional",
+        "member_1_bio": "El Chef Raúl Correa Soto es una figura destacada en la gastronomía Puertorriqueña, reconocido por su enfoque en la cocina Puertorriqueña moderna y su compromiso con ingredientes locales.",
+        "member_1_name_color": "green",
+        "member_2_name": "Evelyn Allendes",
+        "member_2_title": "Escritora y Madre Perruna",
+        "member_2_bio": "Evelyn Allendes, autora Puertorriqueña, combina su amor por la escritura con un enfoque creativo y estratégico que ha desarrollado a lo largo de su trayectoria profesional.",
+        "member_2_name_color": "green",
+        "member_3_name": "Dr. Carlos Ortiz",
+        "member_3_title": "DVM Veterinario Especialista",
+        "member_3_bio": "El Dr. Carlos E. Ortiz Rosario es médico veterinario de Ponce, Puerto Rico. Realizó sus estudios universitarios en la Universidad Católica de Ponce, donde completó su formación académica inicial antes de continuar su carrera en medicina veterinaria.",
+        "member_3_name_color": "orange",
+        "story_heading": "Descubre nuestra historia",
+        "cta_text": "Adquiere el libro completo ▶"
+      }
+    }
+  },
+  "order": ["cocina_about"]
+}

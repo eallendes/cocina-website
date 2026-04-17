@@ -1,0 +1,550 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+{% style %}
+  .cocina-health {
+    background-color: #f5ede0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120' width='120' height='120'%3E%3Cg fill='%234a7c3f' opacity='0.13'%3E%3Cellipse cx='60' cy='76' rx='18' ry='14'/%3E%3Cellipse cx='35' cy='51' rx='9' ry='8' transform='rotate(-20 35 51)'/%3E%3Cellipse cx='50' cy='40' rx='9' ry='8'/%3E%3Cellipse cx='70' cy='40' rx='9' ry='8'/%3E%3Cellipse cx='85' cy='51' rx='9' ry='8' transform='rotate(20 85 51)'/%3E%3C/g%3E%3C/svg%3E");
+    font-family: 'Montserrat', sans-serif;
+    padding: 0 0 80px;
+  }
+
+  /* ── Hero Banner ── */
+  .cocina-health__hero {
+    background-color: #4a7c3f;
+    padding: 56px 20px;
+    text-align: center;
+    margin-bottom: 64px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cocina-health__hero-badge {
+    display: inline-block;
+    background-color: #e8640a;
+    color: #fff;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 1rem;
+    letter-spacing: 3px;
+    padding: 6px 28px;
+    border-radius: 50px;
+    margin-bottom: 16px;
+  }
+
+  .cocina-health__hero-title {
+    font-family: 'Bebas Neue', cursive;
+    font-size: clamp(2.4rem, 5vw, 3.8rem);
+    color: #fff;
+    margin: 0 0 12px;
+    letter-spacing: 2px;
+    line-height: 1.1;
+  }
+
+  .cocina-health__hero-sub {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 1.1rem;
+    margin: 0 0 28px;
+  }
+
+  /* Dr. Ortiz intro card */
+  .cocina-health__dr-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .cocina-health__dr-photo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid rgba(255,255,255,0.6);
+    flex-shrink: 0;
+    background: rgba(255,255,255,0.2);
+  }
+
+  .cocina-health__dr-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+  }
+
+  .cocina-health__dr-info {
+    text-align: left;
+  }
+
+  .cocina-health__dr-name {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: #fff;
+    margin: 0 0 4px;
+  }
+
+  .cocina-health__dr-title {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.8);
+    margin: 0;
+    font-style: italic;
+  }
+
+  @media (max-width: 480px) {
+    .cocina-health__dr-info {
+      text-align: center;
+    }
+  }
+
+  /* ── Inner container ── */
+  .cocina-health__inner {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  /* ── Section heading ── */
+  .cocina-health__section-head {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .cocina-health__section-badge {
+    display: inline-block;
+    background-color: #4a7c3f;
+    color: #fff;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+    padding: 8px 40px;
+    border-radius: 50px;
+    margin-bottom: 14px;
+  }
+
+  .cocina-health__section-sub {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    color: #4a7c3f;
+    font-size: 1.1rem;
+    margin: 0;
+  }
+
+  /* ── Tip Cards Grid ── */
+  .cocina-health__tips {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    margin-bottom: 64px;
+  }
+
+  @media (max-width: 900px) {
+    .cocina-health__tips {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 560px) {
+    .cocina-health__tips {
+      grid-template-columns: 1fr;
+      max-width: 400px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  .cocina-tip-card {
+    background: rgba(255, 255, 255, 0.75);
+    border-radius: 20px;
+    border: 1px solid rgba(74, 124, 63, 0.12);
+    box-shadow: 0 4px 20px rgba(74, 124, 63, 0.08);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .cocina-tip-card__img-wrap {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background: #e8ddd0;
+  }
+
+  .cocina-tip-card__img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .cocina-tip-card__body {
+    padding: 22px 22px 26px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  .cocina-tip-card__icon {
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+    line-height: 1;
+  }
+
+  .cocina-tip-card__title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    color: #4a7c3f;
+    margin: 0 0 10px;
+  }
+
+  .cocina-tip-card__text {
+    font-size: 0.83rem;
+    color: #555;
+    line-height: 1.65;
+    margin: 0 0 18px;
+    flex: 1;
+  }
+
+  .cocina-tip-card__tag {
+    display: inline-block;
+    background: rgba(74, 124, 63, 0.1);
+    color: #4a7c3f;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 4px 14px;
+    border-radius: 50px;
+    align-self: flex-start;
+  }
+
+  /* ── Disclaimer ── */
+  .cocina-health__disclaimer {
+    background: rgba(74, 124, 63, 0.08);
+    border-left: 4px solid #4a7c3f;
+    border-radius: 0 12px 12px 0;
+    padding: 18px 24px;
+    margin-bottom: 56px;
+    font-size: 0.8rem;
+    color: #555;
+    line-height: 1.6;
+  }
+
+  .cocina-health__disclaimer strong {
+    color: #4a7c3f;
+  }
+
+  /* ── Book CTA ── */
+  .cocina-health__cta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 28px;
+    flex-wrap: wrap;
+  }
+
+  .cocina-health__book-img {
+    width: 110px;
+    height: auto;
+    display: block;
+    filter: drop-shadow(0 6px 14px rgba(0,0,0,0.18));
+  }
+
+  .cocina-btn-orange {
+    display: inline-block;
+    background-color: #e8640a;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 15px 38px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: background-color 0.25s ease;
+    box-shadow: 0 4px 14px rgba(232, 100, 10, 0.35);
+  }
+
+  .cocina-btn-orange:hover {
+    background-color: #c95500;
+  }
+{% endstyle %}
+
+<div class="cocina-health">
+
+  {%- comment -%} ── Hero ── {%- endcomment -%}
+  <div class="cocina-health__hero">
+    {%- if section.settings.hero_badge != blank -%}
+      <div><span class="cocina-health__hero-badge">{{ section.settings.hero_badge }}</span></div>
+    {%- endif -%}
+    <h1 class="cocina-health__hero-title">{{ section.settings.hero_title }}</h1>
+    {%- if section.settings.hero_sub != blank -%}
+      <p class="cocina-health__hero-sub">{{ section.settings.hero_sub }}</p>
+    {%- endif -%}
+    <div class="cocina-health__dr-wrap">
+      {%- if section.settings.dr_photo != blank -%}
+        <div class="cocina-health__dr-photo">
+          {{- section.settings.dr_photo | image_url: width: 240 | image_tag: loading: 'eager', alt: section.settings.dr_name -}}
+        </div>
+      {%- endif -%}
+      <div class="cocina-health__dr-info">
+        <p class="cocina-health__dr-name">{{ section.settings.dr_name }}</p>
+        <p class="cocina-health__dr-title">{{ section.settings.dr_title }}</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="cocina-health__inner">
+
+    {%- comment -%} ── Section Heading ── {%- endcomment -%}
+    <div class="cocina-health__section-head">
+      <div><span class="cocina-health__section-badge">{{ section.settings.section_badge }}</span></div>
+      {%- if section.settings.section_sub != blank -%}
+        <p class="cocina-health__section-sub">{{ section.settings.section_sub }}</p>
+      {%- endif -%}
+    </div>
+
+    {%- comment -%} ── Health Tip Cards ── {%- endcomment -%}
+    {%- if section.blocks.size > 0 -%}
+      <div class="cocina-health__tips">
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'health_tip' -%}
+            <div class="cocina-tip-card" {{ block.shopify_attributes }}>
+              {%- if block.settings.image != blank -%}
+                <div class="cocina-tip-card__img-wrap">
+                  {{- block.settings.image | image_url: width: 700 | image_tag: loading: 'lazy', alt: block.settings.title -}}
+                </div>
+              {%- endif -%}
+              <div class="cocina-tip-card__body">
+                {%- if block.settings.icon != blank -%}
+                  <div class="cocina-tip-card__icon">{{ block.settings.icon }}</div>
+                {%- endif -%}
+                <h3 class="cocina-tip-card__title">{{ block.settings.title }}</h3>
+                <p class="cocina-tip-card__text">{{ block.settings.text }}</p>
+                {%- if block.settings.tag != blank -%}
+                  <span class="cocina-tip-card__tag">{{ block.settings.tag }}</span>
+                {%- endif -%}
+              </div>
+            </div>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+
+    {%- comment -%} ── Veterinary Disclaimer ── {%- endcomment -%}
+    {%- if section.settings.disclaimer != blank -%}
+      <div class="cocina-health__disclaimer">
+        <strong>Nota importante:</strong> {{ section.settings.disclaimer }}
+      </div>
+    {%- endif -%}
+
+    {%- comment -%} ── Book CTA ── {%- endcomment -%}
+    <div class="cocina-health__cta">
+      {%- if section.settings.book_image != blank -%}
+        {{- section.settings.book_image | image_url: width: 300 | image_tag: loading: 'lazy', class: 'cocina-health__book-img', alt: 'En la Cocina de Raúl con Bear' -}}
+      {%- endif -%}
+      <a href="{{ section.settings.cta_link }}" class="cocina-btn-orange">
+        {{ section.settings.cta_text }}
+      </a>
+    </div>
+
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Salud Canina",
+  "tag": "section",
+  "blocks": [
+    {
+      "type": "health_tip",
+      "name": "Consejo de salud",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Imagen (opcional)"
+        },
+        {
+          "type": "text",
+          "id": "icon",
+          "label": "Emoji / ícono",
+          "default": "🐾"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Título del consejo"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Descripción"
+        },
+        {
+          "type": "text",
+          "id": "tag",
+          "label": "Etiqueta (ej. Nutrición)"
+        }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "header",
+      "content": "Hero Banner"
+    },
+    {
+      "type": "text",
+      "id": "hero_badge",
+      "label": "Badge (naranja)",
+      "default": "Dr. Carlos E. Ortiz"
+    },
+    {
+      "type": "text",
+      "id": "hero_title",
+      "label": "Título principal",
+      "default": "Salud Canina"
+    },
+    {
+      "type": "text",
+      "id": "hero_sub",
+      "label": "Subtítulo",
+      "default": "Consejos veterinarios para el bienestar de tu perro"
+    },
+    {
+      "type": "header",
+      "content": "Perfil del Dr. Ortiz"
+    },
+    {
+      "type": "image_picker",
+      "id": "dr_photo",
+      "label": "Foto del Dr. Ortiz"
+    },
+    {
+      "type": "text",
+      "id": "dr_name",
+      "label": "Nombre",
+      "default": "Dr. Carlos E. Ortiz"
+    },
+    {
+      "type": "text",
+      "id": "dr_title",
+      "label": "Título",
+      "default": "DVM · Veterinario Especialista"
+    },
+    {
+      "type": "header",
+      "content": "Encabezado de sección"
+    },
+    {
+      "type": "text",
+      "id": "section_badge",
+      "label": "Badge verde",
+      "default": "Consejos de Salud"
+    },
+    {
+      "type": "text",
+      "id": "section_sub",
+      "label": "Subtítulo itálico",
+      "default": "para que tu mejor amigo viva más y mejor"
+    },
+    {
+      "type": "header",
+      "content": "Aviso veterinario"
+    },
+    {
+      "type": "textarea",
+      "id": "disclaimer",
+      "label": "Texto del aviso",
+      "default": "Estos consejos son orientativos. Siempre consulta con tu veterinario de confianza antes de realizar cambios en la dieta o rutina de salud de tu mascota."
+    },
+    {
+      "type": "header",
+      "content": "CTA del libro"
+    },
+    {
+      "type": "image_picker",
+      "id": "book_image",
+      "label": "Foto del libro"
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "Texto del botón",
+      "default": "Adquiere el libro completo ▶"
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "Enlace del botón"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Salud Canina",
+      "blocks": [
+        {
+          "type": "health_tip",
+          "settings": {
+            "icon": "🥩",
+            "title": "Proteínas de calidad",
+            "text": "Los perros necesitan proteínas de origen animal como pollo, res o salmón como base de su dieta. Una alimentación rica en proteínas mantiene músculos fuertes y energía activa.",
+            "tag": "Nutrición"
+          }
+        },
+        {
+          "type": "health_tip",
+          "settings": {
+            "icon": "🥦",
+            "title": "Vegetales seguros",
+            "text": "Brócoli, zanahorias y espinacas son excelentes fuentes de vitaminas para tu perro. Siempre cocidos o en pequeñas porciones como complemento de su dieta principal.",
+            "tag": "Nutrición"
+          }
+        },
+        {
+          "type": "health_tip",
+          "settings": {
+            "icon": "💧",
+            "title": "Hidratación constante",
+            "text": "Un perro bien hidratado es un perro sano. Asegúrate de que siempre tenga acceso a agua fresca y limpia, especialmente en días calurosos o después del ejercicio.",
+            "tag": "Bienestar"
+          }
+        },
+        {
+          "type": "health_tip",
+          "settings": {
+            "icon": "🚫",
+            "title": "Alimentos prohibidos",
+            "text": "Nunca ofrezcas chocolate, uvas, cebolla, ajo, aguacate ni alimentos con xilitol. Estos son tóxicos para los perros y pueden causar problemas serios de salud.",
+            "tag": "Seguridad"
+          }
+        },
+        {
+          "type": "health_tip",
+          "settings": {
+            "icon": "🏃",
+            "title": "Ejercicio y dieta",
+            "text": "La alimentación casera debe ir acompañada de actividad física regular. Una dieta balanceada y ejercicio diario son la fórmula perfecta para la longevidad canina.",
+            "tag": "Bienestar"
+          }
+        },
+        {
+          "type": "health_tip",
+          "settings": {
+            "icon": "🩺",
+            "title": "Chequeos regulares",
+            "text": "Visita a tu veterinario al menos dos veces al año. Un chequeo preventivo puede detectar condiciones a tiempo y mantener a tu amigo peludo saludable por más años.",
+            "tag": "Prevención"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

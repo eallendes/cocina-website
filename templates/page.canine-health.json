@@ -1,0 +1,76 @@
+{
+  "sections": {
+    "cocina_health": {
+      "type": "cocina-canine-health",
+      "blocks": {
+        "tip1": {
+          "type": "health_tip",
+          "settings": {
+            "icon": "🥩",
+            "title": "Proteínas de calidad",
+            "text": "Los perros necesitan proteínas de origen animal como pollo, res o salmón como base de su dieta. Una alimentación rica en proteínas mantiene músculos fuertes y energía activa.",
+            "tag": "Nutrición"
+          }
+        },
+        "tip2": {
+          "type": "health_tip",
+          "settings": {
+            "icon": "🥦",
+            "title": "Vegetales seguros",
+            "text": "Brócoli, zanahorias y espinacas son excelentes fuentes de vitaminas para tu perro. Siempre cocidos o en pequeñas porciones como complemento de su dieta principal.",
+            "tag": "Nutrición"
+          }
+        },
+        "tip3": {
+          "type": "health_tip",
+          "settings": {
+            "icon": "💧",
+            "title": "Hidratación constante",
+            "text": "Un perro bien hidratado es un perro sano. Asegúrate de que siempre tenga acceso a agua fresca y limpia, especialmente en días calurosos o después del ejercicio.",
+            "tag": "Bienestar"
+          }
+        },
+        "tip4": {
+          "type": "health_tip",
+          "settings": {
+            "icon": "🚫",
+            "title": "Alimentos prohibidos",
+            "text": "Nunca ofrezcas chocolate, uvas, cebolla, ajo, aguacate ni alimentos con xilitol. Estos son tóxicos para los perros y pueden causar problemas serios de salud.",
+            "tag": "Seguridad"
+          }
+        },
+        "tip5": {
+          "type": "health_tip",
+          "settings": {
+            "icon": "🏃",
+            "title": "Ejercicio y dieta",
+            "text": "La alimentación casera debe ir acompañada de actividad física regular. Una dieta balanceada y ejercicio diario son la fórmula perfecta para la longevidad canina.",
+            "tag": "Bienestar"
+          }
+        },
+        "tip6": {
+          "type": "health_tip",
+          "settings": {
+            "icon": "🩺",
+            "title": "Chequeos regulares",
+            "text": "Visita a tu veterinario al menos dos veces al año. Un chequeo preventivo puede detectar condiciones a tiempo y mantener a tu amigo peludo saludable por más años.",
+            "tag": "Prevención"
+          }
+        }
+      },
+      "block_order": ["tip1", "tip2", "tip3", "tip4", "tip5", "tip6"],
+      "settings": {
+        "hero_badge": "Dr. Carlos E. Ortiz",
+        "hero_title": "Salud Canina",
+        "hero_sub": "Consejos veterinarios para el bienestar de tu perro",
+        "dr_name": "Dr. Carlos E. Ortiz",
+        "dr_title": "DVM · Veterinario Especialista",
+        "section_badge": "Consejos de Salud",
+        "section_sub": "para que tu mejor amigo viva más y mejor",
+        "disclaimer": "Estos consejos son orientativos. Siempre consulta con tu veterinario de confianza antes de realizar cambios en la dieta o rutina de salud de tu mascota.",
+        "cta_text": "Adquiere el libro completo ▶"
+      }
+    }
+  },
+  "order": ["cocina_health"]
+}
