@@ -1,0 +1,555 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+{% style %}
+  .cocina-author {
+    background-color: #f5ede0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120' width='120' height='120'%3E%3Cg fill='%234a7c3f' opacity='0.13'%3E%3Cellipse cx='60' cy='76' rx='18' ry='14'/%3E%3Cellipse cx='35' cy='51' rx='9' ry='8' transform='rotate(-20 35 51)'/%3E%3Cellipse cx='50' cy='40' rx='9' ry='8'/%3E%3Cellipse cx='70' cy='40' rx='9' ry='8'/%3E%3Cellipse cx='85' cy='51' rx='9' ry='8' transform='rotate(20 85 51)'/%3E%3C/g%3E%3C/svg%3E");
+    font-family: 'Montserrat', sans-serif;
+    padding: 48px 20px 80px;
+    min-height: 100vh;
+  }
+
+  .cocina-author__inner {
+    max-width: 1060px;
+    margin: 0 auto;
+  }
+
+  /* ── Back link ── */
+  .cocina-author__back {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #4a7c3f;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    margin-bottom: 36px;
+    transition: opacity 0.2s;
+  }
+  .cocina-author__back:hover { opacity: 0.7; }
+  .cocina-author__back svg {
+    width: 18px;
+    height: 18px;
+    fill: #4a7c3f;
+  }
+
+  /* ── Main layout ── */
+  .cocina-author__layout {
+    display: grid;
+    grid-template-columns: 380px 1fr;
+    gap: 56px;
+    align-items: start;
+  }
+
+  @media (max-width: 860px) {
+    .cocina-author__layout {
+      grid-template-columns: 1fr;
+      gap: 36px;
+    }
+  }
+
+  /* ── Photo column ── */
+  .cocina-author__photo-wrap {
+    position: sticky;
+    top: 24px;
+  }
+
+  .cocina-author__photo {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 12px 40px rgba(74, 124, 63, 0.18);
+    background: #e8ddd0;
+  }
+
+  .cocina-author__photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+  }
+
+  .cocina-author__photo .placeholder-svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  /* Social under photo */
+  .cocina-author__social {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 24px;
+  }
+
+  .cocina-author__social-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #4a7c3f;
+    font-size: 0.82rem;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 10px 16px;
+    background: rgba(255,255,255,0.7);
+    border-radius: 50px;
+    border: 1.5px solid rgba(74,124,63,0.2);
+    transition: background 0.2s, border-color 0.2s;
+  }
+  .cocina-author__social-link:hover {
+    background: rgba(255,255,255,0.95);
+    border-color: #4a7c3f;
+  }
+  .cocina-author__social-link svg {
+    width: 18px;
+    height: 18px;
+    fill: #4a7c3f;
+    flex-shrink: 0;
+  }
+  .cocina-author__social-link--instagram svg { fill: #e8640a; }
+  .cocina-author__social-link--instagram { color: #e8640a; border-color: rgba(232,100,10,0.2); }
+  .cocina-author__social-link--instagram:hover { border-color: #e8640a; }
+
+  /* ── Bio column ── */
+  .cocina-author__role-badge {
+    display: inline-block;
+    background-color: #4a7c3f;
+    color: #fff;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 6px 20px;
+    border-radius: 50px;
+    margin-bottom: 16px;
+  }
+
+  .cocina-author__name {
+    font-family: 'Bebas Neue', cursive;
+    font-size: clamp(2.8rem, 6vw, 4.4rem);
+    letter-spacing: 3px;
+    line-height: 1;
+    margin: 0 0 8px;
+    color: #222;
+  }
+
+  .cocina-author__name--green { color: #4a7c3f; }
+  .cocina-author__name--orange { color: #e8640a; }
+
+  .cocina-author__tagline {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1.15rem;
+    color: #e8640a;
+    margin: 0 0 32px;
+  }
+
+  /* Divider */
+  .cocina-author__divider {
+    width: 60px;
+    height: 4px;
+    background: #4a7c3f;
+    border-radius: 2px;
+    margin-bottom: 28px;
+  }
+
+  /* Bio paragraphs */
+  .cocina-author__bio {
+    font-size: 0.95rem;
+    color: #3a3a3a;
+    line-height: 1.85;
+  }
+
+  .cocina-author__bio p {
+    margin: 0 0 18px;
+  }
+
+  .cocina-author__bio p:last-child {
+    margin-bottom: 0;
+  }
+
+  .cocina-author__bio strong {
+    color: #4a7c3f;
+    font-weight: 700;
+  }
+
+  /* Achievements list */
+  .cocina-author__achievements {
+    background: rgba(255,255,255,0.65);
+    border-radius: 16px;
+    border-left: 4px solid #4a7c3f;
+    padding: 22px 24px;
+    margin: 28px 0;
+  }
+
+  .cocina-author__achievements h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 0.8rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #4a7c3f;
+    margin: 0 0 14px;
+  }
+
+  .cocina-author__achievements ul {
+    margin: 0;
+    padding-left: 20px;
+    list-style: none;
+  }
+
+  .cocina-author__achievements ul li {
+    font-size: 0.87rem;
+    color: #444;
+    line-height: 1.6;
+    margin-bottom: 10px;
+    padding-left: 4px;
+    position: relative;
+  }
+
+  .cocina-author__achievements ul li::before {
+    content: "🐾";
+    position: absolute;
+    left: -22px;
+    font-size: 0.75rem;
+  }
+
+  /* Quote */
+  .cocina-author__quote {
+    background: #4a7c3f;
+    color: #fff;
+    border-radius: 16px;
+    padding: 28px 32px;
+    margin: 32px 0 0;
+    position: relative;
+  }
+
+  .cocina-author__quote::before {
+    content: "\201C";
+    font-family: 'Playfair Display', serif;
+    font-size: 5rem;
+    color: rgba(255,255,255,0.2);
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    line-height: 1;
+  }
+
+  .cocina-author__quote p {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin: 0;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ── Book CTA strip ── */
+  .cocina-author__cta {
+    margin-top: 64px;
+    background: rgba(255,255,255,0.6);
+    border-radius: 20px;
+    padding: 32px 40px;
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    flex-wrap: wrap;
+    justify-content: center;
+    border: 1px solid rgba(74,124,63,0.12);
+  }
+
+  .cocina-author__cta-book {
+    width: 90px;
+    height: auto;
+    filter: drop-shadow(0 6px 14px rgba(0,0,0,0.18));
+  }
+
+  .cocina-author__cta-text h3 {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 1.6rem;
+    letter-spacing: 2px;
+    color: #4a7c3f;
+    margin: 0 0 4px;
+  }
+
+  .cocina-author__cta-text p {
+    font-size: 0.85rem;
+    color: #666;
+    margin: 0;
+  }
+
+  .cocina-btn-orange {
+    display: inline-block;
+    background-color: #e8640a;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 0.95rem;
+    padding: 14px 32px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: background-color 0.25s ease;
+    box-shadow: 0 4px 14px rgba(232, 100, 10, 0.35);
+    white-space: nowrap;
+  }
+  .cocina-btn-orange:hover { background-color: #c95500; }
+{% endstyle %}
+
+<div class="cocina-author">
+  <div class="cocina-author__inner">
+
+    {%- comment -%} ── Back link ── {%- endcomment -%}
+    <a href="{{ section.settings.back_link | default: '/pages/sobre-nosotros' }}" class="cocina-author__back">
+      <svg viewBox="0 0 24 24"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
+      {{ section.settings.back_label | default: '← Sobre Nosotros' }}
+    </a>
+
+    <div class="cocina-author__layout">
+
+      {%- comment -%} ── Left: Photo + Social ── {%- endcomment -%}
+      <div class="cocina-author__photo-wrap">
+        <div class="cocina-author__photo">
+          {%- if section.settings.photo != blank -%}
+            {{- section.settings.photo | image_url: width: 800 | image_tag: loading: 'eager', alt: section.settings.name -}}
+          {%- else -%}
+            {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+          {%- endif -%}
+        </div>
+
+        <div class="cocina-author__social">
+          {%- if section.settings.instagram_url != blank -%}
+            <a href="{{ section.settings.instagram_url }}" class="cocina-author__social-link cocina-author__social-link--instagram" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+              {{ section.settings.instagram_handle }}
+            </a>
+          {%- endif -%}
+          {%- if section.settings.website_url != blank -%}
+            <a href="{{ section.settings.website_url }}" class="cocina-author__social-link" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+              {{ section.settings.website_label | default: 'Sitio web' }}
+            </a>
+          {%- endif -%}
+        </div>
+      </div>
+
+      {%- comment -%} ── Right: Bio ── {%- endcomment -%}
+      <div class="cocina-author__content">
+        {%- if section.settings.role != blank -%}
+          <span class="cocina-author__role-badge">{{ section.settings.role }}</span>
+        {%- endif -%}
+
+        <h1 class="cocina-author__name cocina-author__name--{{ section.settings.name_color }}">
+          {{ section.settings.name }}
+        </h1>
+
+        {%- if section.settings.tagline != blank -%}
+          <p class="cocina-author__tagline">{{ section.settings.tagline }}</p>
+        {%- endif -%}
+
+        <div class="cocina-author__divider"></div>
+
+        <div class="cocina-author__bio">
+          {{ section.settings.bio_text }}
+        </div>
+
+        {%- if section.settings.achievements_title != blank -%}
+          <div class="cocina-author__achievements">
+            <h4>{{ section.settings.achievements_title }}</h4>
+            <ul>
+              {%- for i in (1..5) -%}
+                {%- assign key = 'achievement_' | append: i -%}
+                {%- if section.settings[key] != blank -%}
+                  <li>{{ section.settings[key] }}</li>
+                {%- endif -%}
+              {%- endfor -%}
+            </ul>
+          </div>
+        {%- endif -%}
+
+        {%- if section.settings.quote != blank -%}
+          <div class="cocina-author__quote">
+            <p>{{ section.settings.quote }}</p>
+          </div>
+        {%- endif -%}
+      </div>
+
+    </div>
+
+    {%- comment -%} ── Book CTA ── {%- endcomment -%}
+    <div class="cocina-author__cta">
+      {%- if section.settings.book_image != blank -%}
+        {{- section.settings.book_image | image_url: width: 200 | image_tag: loading: 'lazy', class: 'cocina-author__cta-book', alt: 'En la Cocina de Raúl con Bear' -}}
+      {%- endif -%}
+      <div class="cocina-author__cta-text">
+        <h3>En la Cocina de Raúl con Bear</h3>
+        <p>Más de 100 recetas saludables para tu mejor amigo</p>
+      </div>
+      <a href="{{ section.settings.cta_link }}" class="cocina-btn-orange">
+        {{ section.settings.cta_text | default: 'Adquiere el libro ▶' }}
+      </a>
+    </div>
+
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Biografía de Autor",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Foto y navegación"
+    },
+    {
+      "type": "image_picker",
+      "id": "photo",
+      "label": "Foto del autor"
+    },
+    {
+      "type": "url",
+      "id": "back_link",
+      "label": "Enlace del botón regresar",
+      "info": "Normalmente /pages/sobre-nosotros"
+    },
+    {
+      "type": "text",
+      "id": "back_label",
+      "label": "Texto del botón regresar",
+      "default": "← Sobre Nosotros"
+    },
+    {
+      "type": "header",
+      "content": "Información del autor"
+    },
+    {
+      "type": "text",
+      "id": "role",
+      "label": "Badge de rol",
+      "default": "Chef Profesional"
+    },
+    {
+      "type": "text",
+      "id": "name",
+      "label": "Nombre completo",
+      "default": "Raúl Correa"
+    },
+    {
+      "type": "select",
+      "id": "name_color",
+      "label": "Color del nombre",
+      "options": [
+        { "value": "green", "label": "Verde" },
+        { "value": "orange", "label": "Naranja" }
+      ],
+      "default": "green"
+    },
+    {
+      "type": "text",
+      "id": "tagline",
+      "label": "Tagline (itálica naranja)"
+    },
+    {
+      "type": "richtext",
+      "id": "bio_text",
+      "label": "Biografía (párrafos)"
+    },
+    {
+      "type": "header",
+      "content": "Reconocimientos (opcional)"
+    },
+    {
+      "type": "text",
+      "id": "achievements_title",
+      "label": "Título de la sección"
+    },
+    {
+      "type": "text",
+      "id": "achievement_1",
+      "label": "Reconocimiento 1"
+    },
+    {
+      "type": "text",
+      "id": "achievement_2",
+      "label": "Reconocimiento 2"
+    },
+    {
+      "type": "text",
+      "id": "achievement_3",
+      "label": "Reconocimiento 3"
+    },
+    {
+      "type": "text",
+      "id": "achievement_4",
+      "label": "Reconocimiento 4"
+    },
+    {
+      "type": "text",
+      "id": "achievement_5",
+      "label": "Reconocimiento 5"
+    },
+    {
+      "type": "header",
+      "content": "Cita destacada (opcional)"
+    },
+    {
+      "type": "text",
+      "id": "quote",
+      "label": "Frase / cita"
+    },
+    {
+      "type": "header",
+      "content": "Redes sociales"
+    },
+    {
+      "type": "url",
+      "id": "instagram_url",
+      "label": "URL de Instagram"
+    },
+    {
+      "type": "text",
+      "id": "instagram_handle",
+      "label": "Handle de Instagram",
+      "default": "@usuario"
+    },
+    {
+      "type": "url",
+      "id": "website_url",
+      "label": "URL del sitio web"
+    },
+    {
+      "type": "text",
+      "id": "website_label",
+      "label": "Texto del enlace web"
+    },
+    {
+      "type": "header",
+      "content": "CTA del libro"
+    },
+    {
+      "type": "image_picker",
+      "id": "book_image",
+      "label": "Foto del libro"
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "Texto del botón",
+      "default": "Adquiere el libro ▶"
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "Enlace del botón"
+    }
+  ],
+  "presets": [
+    { "name": "Biografía de Autor" }
+  ]
+}
+{% endschema %}

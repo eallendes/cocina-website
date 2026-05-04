@@ -285,11 +285,12 @@
           <h3 class="cocina-team-card__name cocina-team-card__name--{{ m_color }}">{{ m_name }}</h3>
           <p class="cocina-team-card__title">{{ m_title }}</p>
           <p class="cocina-team-card__bio">{{ m_bio }}</p>
-          {%- if m_link != blank -%}
-            <a href="{{ m_link }}" class="cocina-btn-conoce">Conoce más &#9658;</a>
-          {%- else -%}
-            <span class="cocina-btn-conoce">Conoce más &#9658;</span>
-          {%- endif -%}
+          {%- liquid
+            assign default_links = '/pages/raul-correa,/pages/evelyn-allendes,/pages/carlos-ortiz' | split: ','
+            assign default_link = default_links[i | minus: 1]
+            assign btn_link = m_link | default: default_link
+          -%}
+          <a href="{{ btn_link }}" class="cocina-btn-conoce">Conoce más &#9658;</a>
         </div>
       {%- endfor -%}
     </div>

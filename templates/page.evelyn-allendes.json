@@ -1,0 +1,22 @@
+{
+  "sections": {
+    "author": {
+      "type": "cocina-author-bio",
+      "settings": {
+        "back_link": "/pages/sobre-nosotros",
+        "back_label": "← Sobre Nosotros",
+        "role": "Escritora y Madre Perruna",
+        "name": "Evelyn Allendes",
+        "name_color": "green",
+        "tagline": "Autora puertorriqueña, corazón de Bear the Doodle",
+        "bio_text": "<p>Evelyn Allendes, autora puertorriqueña, combina su amor por la escritura con un enfoque creativo y estratégico que ha desarrollado a lo largo de su trayectoria profesional. A través de sus libros infantiles, ha compartido historias que inspiran y educan, siempre resaltando la importancia de la lectura temprana y la conexión cultural.</p><p>Como madre de tres hijos, Evelyn valora profundamente el impacto que su trabajo tiene en las familias y comunidades. Su serie de libros bilingües, inspirada en su perro Bear the Doodle, ha tocado los corazones de padres y niños por igual, mostrando la belleza de la diversidad y la educación inclusiva.</p><p>En este esfuerzo colaborativo, Evelyn aporta su experiencia narrativa para reinventar cómo percibimos la comida para mascotas. Juntos, crean un libro único que celebra el amor por los perros y la importancia de cuidar a nuestras mascotas de manera significativa.</p>",
+        "instagram_url": "https://www.instagram.com/bear_the_do0dle/",
+        "instagram_handle": "@BEAR_THE_DOODLE",
+        "website_url": "https://bearthedoodle.com/",
+        "website_label": "bearthedoodle.com",
+        "cta_text": "Adquiere el libro ▶"
+      }
+    }
+  },
+  "order": ["author"]
+}

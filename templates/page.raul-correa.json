@@ -1,0 +1,27 @@
+{
+  "sections": {
+    "author": {
+      "type": "cocina-author-bio",
+      "settings": {
+        "back_link": "/pages/sobre-nosotros",
+        "back_label": "← Sobre Nosotros",
+        "role": "Chef Profesional",
+        "name": "Raúl Correa",
+        "name_color": "green",
+        "tagline": "Embajador de la gastronomía puertorriqueña",
+        "bio_text": "<p><strong>El Chef Raúl Correa Soto es una figura destacada en la gastronomía puertorriqueña,</strong> reconocido por su enfoque en la cocina puertorriqueña moderna y su compromiso con ingredientes locales.</p><p>Con una carrera forjada entre fogones y pasión, el Chef Correa es embajador cultural que eleva los sabores de Puerto Rico al mundo, combinando tradición, creatividad y altos estándares.</p>",
+        "achievements_title": "Reconocimientos",
+        "achievement_1": "Seleccionado como uno de los Taste Twenty Chefs de la James Beard Foundation y participante en la serie Taste America en 2024.",
+        "achievement_2": "Reconocido con el \"El Ceiba Award\" de The National Museum of Puerto Rico en Chicago por su aportación a las artes y cultura Boricua.",
+        "achievement_3": "Capitán del equipo del National PR Culinary Team, ganadores de medallas de oro, plata y seleccionados mejor equipo del caribe.",
+        "quote": "Cada plato cuenta nuestra historia; cada ingrediente honra nuestra tierra.",
+        "instagram_url": "https://www.instagram.com/raulcorreapr",
+        "instagram_handle": "@RAULCORREAPR",
+        "website_url": "https://chefraulcorrea.com/",
+        "website_label": "chefraulcorrea.com",
+        "cta_text": "Adquiere el libro ▶"
+      }
+    }
+  },
+  "order": ["author"]
+}

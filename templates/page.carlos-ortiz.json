@@ -1,0 +1,20 @@
+{
+  "sections": {
+    "author": {
+      "type": "cocina-author-bio",
+      "settings": {
+        "back_link": "/pages/sobre-nosotros",
+        "back_label": "← Sobre Nosotros",
+        "role": "DVM · Veterinario Especialista",
+        "name": "Dr. Carlos Ortiz",
+        "name_color": "orange",
+        "tagline": "Oncología veterinaria · Ponce, Puerto Rico",
+        "bio_text": "<p>El Dr. Carlos E. Ortiz Rosario es médico veterinario originario de Ponce, Puerto Rico. Realizó sus estudios universitarios en la Universidad Católica de Ponce, donde completó su formación académica inicial antes de continuar su carrera en medicina veterinaria.</p><p>Posteriormente obtuvo su grado de Doctor en Medicina Veterinaria en Ross University School of Veterinary Medicine. Tras completar sus estudios, realizó un internado rotatorio en medicina de animales pequeños, donde adquirió experiencia clínica avanzada en diversas áreas de la medicina veterinaria.</p><p>Motivado por su interés en el tratamiento del cáncer en mascotas, el Dr. Ortiz continuó su formación con una residencia especializada en oncología veterinaria. Luego de completar su entrenamiento especializado, <strong>se convirtió en el primer veterinario puertorriqueño en ofrecer servicios exclusivos de oncología veterinaria en Puerto Rico.</strong></p><p>Con el objetivo de expandir el acceso a tratamientos oncológicos avanzados para mascotas en la isla, el Dr. Ortiz fundó el <strong>Centro Oncológico Veterinario de Puerto Rico,</strong> dedicado al diagnóstico y tratamiento del cáncer en perros y gatos.</p><p>Actualmente, el Dr. Ortiz continúa brindando servicios especializados en oncología veterinaria y forma parte del equipo médico de Veterinaria 24/7, donde atiende pacientes y colabora en el desarrollo de tratamientos para mejorar la calidad de vida de mascotas con cáncer.</p>",
+        "instagram_url": "https://www.instagram.com/ortizcancervet",
+        "instagram_handle": "@ORTIZCANCERVET",
+        "cta_text": "Adquiere el libro ▶"
+      }
+    }
+  },
+  "order": ["author"]
+}
