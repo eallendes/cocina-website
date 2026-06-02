@@ -287,7 +287,8 @@
           <p class="cocina-team-card__bio">{{ m_bio }}</p>
           {%- liquid
             assign default_links = '/pages/raul-correa,/pages/evelyn-allendes,/pages/carlos-ortiz' | split: ','
-            assign default_link = default_links[i | minus: 1]
+            assign idx = i | minus: 1
+            assign default_link = default_links[idx]
             assign btn_link = m_link | default: default_link
           -%}
           <a href="{{ btn_link }}" class="cocina-btn-conoce">Conoce más &#9658;</a>
